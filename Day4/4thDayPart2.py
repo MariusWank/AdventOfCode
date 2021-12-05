@@ -36,7 +36,7 @@ def generate_r_c(boards):
 
 
 
-# checking which row/column won
+# checking which row/column won and deleting winners
 sequence = []
 last_loser_idx = []
 
@@ -57,7 +57,7 @@ for v in inputs:
     for idx in del_idx:
         if len(boards) != 1:
             del boards[idx]
-        else:
+        else:   # if we have one board left we have to continue the sequence until it wins
             if len(del_idx) == 1:
                 last_loser_idx.append(idx)
                 break
